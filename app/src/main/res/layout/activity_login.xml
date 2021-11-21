@@ -55,6 +55,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -71,17 +76,18 @@
                     android:inputType="text">
                 </com.google.android.material.textfield.TextInputEditText>
 
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="@color/secondaryColor"
+                    android:text="REGISTRAR"
+                    android:textColor="@color/white" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REGISTRAR"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/secondaryColor"
-            android:layout_margin="30dp"
-            android:textColor="@color/white"/>
 
 
     </LinearLayout>

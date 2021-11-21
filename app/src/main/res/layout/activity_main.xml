@@ -39,7 +39,7 @@
         android:layout_margin="50dp">
 
         <Button
-            android:id="@+id/btnadmin"
+            android:id="@+id/btnregistro"
             android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,11 +47,11 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/white"
-            android:text="Administrador"
+            android:text="Registrarse"
             android:gravity="center"/>
 
         <Button
-            android:id="@+id/btnvender"
+            android:id="@+id/btnlogin"
             android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -59,7 +59,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/white"
             android:layout_marginLeft="10dp"
-            android:text="Vendedor"
+            android:text="Ingresar"
             android:gravity="center"/>
 
     </LinearLayout>

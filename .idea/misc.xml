@@ -6,8 +6,11 @@
         <entry key="..\:/InventQR/app/src/main/res/drawable/rounded_button.xml" value="0.4453125" />
         <entry key="..\:/InventQR/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/InventQR/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/InventQR/app/src/main/res/layout/activity_menu.xml" value="0.42916666666666664" />
         <entry key="..\:/InventQR/app/src/main/res/layout/activity_register.xml" value="0.330090340514246" />
+        <entry key="..\:/InventQR/app/src/main/res/layout/activity_scaner_qractivity.xml" value="0.42916666666666664" />
         <entry key="..\:/InventQR/app/src/main/res/layout/activity_select_option_auth.xml" value="0.42916666666666664" />
+        <entry key="..\:/InventQR/app/src/main/res/menu/main_menu.xml" value="0.42916666666666664" />
       </map>
     </option>
   </component>

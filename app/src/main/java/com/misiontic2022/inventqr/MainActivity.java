@@ -10,8 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mButtonbtnadmin;
-    Button mButtonbtnvender;
+    Button mButtonbtnregistro;
+    Button mButtonbtnlogin;
 
 
     @Override
@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButtonbtnadmin = findViewById(R.id.btnadmin);
-        mButtonbtnvender = findViewById(R.id.btnvender);
+        mButtonbtnregistro = findViewById(R.id.btnregistro);
+        mButtonbtnlogin = findViewById(R.id.btnlogin);
 
 
-        mButtonbtnadmin.setOnClickListener(new View.OnClickListener() {
+        mButtonbtnregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 goToSelectAuth();
             }
         });
-        mButtonbtnvender.setOnClickListener(new View.OnClickListener() {
+        mButtonbtnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void goToSelectAuth() {
-        Intent intent =new Intent(MainActivity.this,SelectOptionAuthActivity.class );
+        Intent intent =new Intent(MainActivity.this,Register.class );
         startActivity(intent);
     }
 }
