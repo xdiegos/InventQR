@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "529240674790",
+    "project_id": "inventqr-a77f9",
+    "storage_bucket": "inventqr-a77f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529240674790:android:cb43e9c7c760646daf8627",
+        "android_client_info": {
+          "package_name": "com.misiontic2022.inventqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529240674790-cm9cu5r5in56tjann87fk1mrkfoqsnp9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.misiontic2022.inventqr",
+            "certificate_hash": "967400cc5781ce93296c2742392360421bea8e2f"
+          }
+        },
+        {
+          "client_id": "529240674790-0mh99g9d5pe9fbjd7a2v6mcqru6gml24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7vQkZDHHuRWL9YJ33Nk5EqmFNGSsmg2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529240674790-0mh99g9d5pe9fbjd7a2v6mcqru6gml24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
