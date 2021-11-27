@@ -34,12 +34,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                goToSelectAuth();
+                goToSelectAuth2();
             }
         });
     }
+
+    private void goToSelectAuth2() {
+        Intent intent =new Intent(MainActivity.this,LoginActivity.class );
+        startActivity(intent);
+    }
+
+
     private void goToSelectAuth() {
         Intent intent =new Intent(MainActivity.this,Register.class );
         startActivity(intent);
+
     }
 }

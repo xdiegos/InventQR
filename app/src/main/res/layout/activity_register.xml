@@ -72,6 +72,16 @@
             android:text="Registrarme"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="133dp"
+            android:layout_height="62dp"
+            android:layout_marginHorizontal="145dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/secondaryColor"
+            android:clickable="true"
+            android:text="Salir"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 

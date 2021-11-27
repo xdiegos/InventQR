@@ -1,15 +1,14 @@
 package com.misiontic2022.inventqr;
 
-import androidx.annotation.Keep;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +26,7 @@ public class Register extends AppCompatActivity {
     private EditText mEditTextMail;
     private EditText mEditTextPassword;
     private Button mButtonRegister;
-
+    private Button mButtonSalir;
 
     //VARIABLES DE LOS DATOS
 
@@ -37,13 +36,6 @@ public class Register extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
-
-
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +90,7 @@ public class Register extends AppCompatActivity {
 
                     String id = mAuth.getCurrentUser().getUid();
 
-                    mDatabase.child("usuarios").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.child("user").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if (task2.isSuccessful()) {
