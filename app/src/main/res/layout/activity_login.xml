@@ -1,105 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:padding="20dp"
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="364dp"
+        android:layout_height="222dp"
+        app:srcCompat="@drawable/icon_user" />
+
+    <EditText
+        android:id="@+id/txtMaillogin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Correo"
+        android:minHeight="48dp"
+        android:autofillHints=""/>
 
-        <ImageView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/icon_user" />
+    <EditText
+        android:id="@+id/txtpasswordlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Contraseña"
+        android:minHeight="48dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/icon_mail" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Correo Electrónico"
-                    android:inputType="text"
-                    android:textColor="#0B0B0B"
-                    android:textColorHighlight="#FB0303"
-                    android:textColorHint="#0B0B0B"></com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/icon_password" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Contraseña"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="#FB0404"
-                    android:textColorHint="@color/black"></com.google.android.material.textfield.TextInputEditText>
-
-                <Button
-                    style="@style/Widget.AppCompat.Button.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
-                    android:background="@drawable/rounded_button"
-                    android:backgroundTint="@color/primaryColor"
-                    android:onClick="iniciarsesion"
-                    android:shadowColor="#F8F6F6"
-                    android:text="Iniciar Sesión"
-                    android:textColor="@color/white" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:text="INICIAR SESIÓN"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"/>
 
 
-    </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</LinearLayout>

@@ -2,5 +2,6 @@
     <string name="app_name">InventQR</string>
     <string name="rg_email">Correo</string>
     <string name="rg_password">Contraseña</string>
+    <string name="btnSalir">Salir</string>
 
 </resources>

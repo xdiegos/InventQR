@@ -1,23 +1,28 @@
 package com.misiontic2022.inventqr;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText rg_email;
-    private EditText rg_password;
+    private EditText mEditTextmail;
+    private EditText mEditTextpassword;
+    private Button mButtonLogin;
+
+
+    private String mail = "";
+    private String password = "";
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -25,41 +30,38 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        rg_email = findViewById(R.id.rg_email);
-        rg_password = findViewById(R.id.rg_password);
-
         mAuth = FirebaseAuth.getInstance();
 
+        mEditTextmail = (EditText) findViewById(R.id.txtMaillogin);
+        mEditTextpassword = (EditText) findViewById(R.id.txtpasswordlogin);
+        mButtonLogin = (Button) findViewById(R.id.btnlogin);
 
 
-    }
 
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 mail = mEditTextmail.getText().toString();
+                 password = mEditTextpassword.getText().toString();
 
-    private void updateUI(FirebaseUser currentUser) {
-    }
-
-    public void iniciarsesion(View view){
-
-        mAuth.signInWithEmailAndPassword(rg_email.getText().toString(),rg_password.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Usuario No existe", Toast.LENGTH_SHORT).show();
+                        if (!mail.isEmpty() && !password.isEmpty()) {
+                            loginUser();
                         } else {
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(LoginActivity.this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
                         }
-
                     }
-                })
-                ;
+                });
 
+            }
+    private void loginUser (){
+        Task<AuthResult> onCompleteListener = mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                startActivity(new Intent(LoginActivity.this, ScanerQRActivity.class));
+            } else {
+                Toast.makeText(LoginActivity.this, "No se pudo iniciar sesion compruebe los datos", Toast.LENGTH_SHORT).show();
+            }
 
+        });
     }
+
 }

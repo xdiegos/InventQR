@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity {
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,15 @@ public class Register extends AppCompatActivity {
         mEditTextMail = (EditText) findViewById(R.id.rg_email);
         mEditTextPassword = (EditText) findViewById(R.id.rg_password);
         mButtonRegister = (Button) findViewById(R.id.btnRegister);
+        mButtonSalir = (Button) findViewById(R.id.btnSalir);
+
+        mButtonSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exit = new Intent(Register.this,MainActivity.class);
+                startActivity(exit);
+            }
+        });
 
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,39 +87,40 @@ public class Register extends AppCompatActivity {
     }
 
     private void registerUser(){
-        mAuth.createUserWithEmailAndPassword(Mail, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+        Task<AuthResult> authResultTask = mAuth.createUserWithEmailAndPassword(Mail, Password).addOnCompleteListener(this::onComplete);
+    }
 
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("User", User);
-                    map.put("Mail", Mail);
-                    map.put("Password", Password);
+    private void onComplete(Task<AuthResult> task) {
+        if (task.isSuccessful()) {
 
+            Map<String, Object> map = new HashMap<>();
+            map.put("Email",Mail);
+            map.put("Password", Password);
+            map.put("User", User);
 
-                    String id = mAuth.getCurrentUser().getUid();
+            String id = mAuth.getCurrentUser().getUid();
 
-                    mDatabase.child("user").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task2) {
-                            if (task2.isSuccessful()) {
-                                startActivity(new Intent(Register.this, MainActivity.class));
-                                finish();
-                            } else {
-                                Toast.makeText(Register.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                    });
-                } else {
-                    Toast.makeText(Register.this, "No se pudo registrar este usuario", Toast.LENGTH_SHORT).show();{
-
-
+            mDatabase.child("User").child(User).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task2) {
+                    if (task2.isSuccessful()) {
+                        startActivity(new Intent(Register.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(Register.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
                     }
+
                 }
+            });
+        } else {
+            Toast.makeText(Register.this, "Este usuario ya esta registrado", Toast.LENGTH_SHORT).show();
+
+            {
+
+
             }
-        });
+
+        }
     }
 }
 
