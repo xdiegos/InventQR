@@ -38,7 +38,8 @@
         android:id="@+id/btnlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primaryColor"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/primaryColor"
         android:text="INICIAR SESIÓN"
         android:textColor="@color/white"
         android:textStyle="bold|italic"/>

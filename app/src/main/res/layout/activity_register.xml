@@ -2,18 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
+    app:layout_insetEdge="bottom"
     tools:context=".Register">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="100dp"
+        android:layout_width="85dp"
+        android:layout_height="71dp"
         android:layout_marginHorizontal="150dp"
+        android:layout_marginTop="15dp"
         android:scaleType="fitCenter"
-        android:textAlignment="textStart"
+        android:textAlignment="gravity"
+        android:tintMode="screen"
         app:srcCompat="@drawable/icon_user" />
 
     <EditText
@@ -23,13 +26,16 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:hint="Nombre Completo"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textAlignment="viewStart"
+        android:textStyle="bold|italic" />
 
     <ImageView
         android:layout_width="79dp"
         android:layout_height="54dp"
         android:layout_marginHorizontal="150dp"
         android:scaleType="fitCenter"
+        android:tintMode="screen"
         app:srcCompat="@drawable/icon_mail" />
 
     <EditText
@@ -39,7 +45,8 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:hint="Correo Electronico"
-        android:inputType="textWebEmailAddress" />
+        android:inputType="textWebEmailAddress"
+        android:textStyle="bold|italic" />
 
     <ImageView
         android:layout_width="87dp"
@@ -54,34 +61,42 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
         android:hint="Contraseña"
-        android:inputType="text|textPassword" />
+        android:inputType="text|textPassword"
+        android:textStyle="bold|italic" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:gravity="bottom"
-        android:orientation="vertical">
+        android:layout_height="174dp"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="133dp"
-            android:layout_height="62dp"
-            android:layout_marginHorizontal="145dp"
-            android:background="@color/secondaryColor"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/primaryColor"
+            android:gravity="center"
             android:text="Registrarme"
-            android:textColor="@color/white" />
+            android:textColor="@color/primaryTextColor"
+            android:textStyle="bold|italic" />
 
         <Button
             android:id="@+id/btnSalir"
-            android:layout_width="133dp"
-            android:layout_height="62dp"
-            android:layout_marginHorizontal="145dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/secondaryColor"
-            android:clickable="true"
-            android:text="Salir"
-            android:textColor="@color/white" />
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:gravity="center"
+            android:text="Regresar"
+            android:textColor="@color/primaryTextColor"
+            android:textStyle="bold|italic" />
+
     </LinearLayout>
 
 
